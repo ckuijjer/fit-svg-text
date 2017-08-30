@@ -7,8 +7,8 @@ export default class FitSVGText extends React.Component {
 
     this.state = {
       zoom: 1,
-      text: [this.props.children]
-    }
+      text: [this.props.children],
+    };
   }
 
   componentDidMount() {
@@ -59,10 +59,15 @@ export default class FitSVGText extends React.Component {
 
       const height = textHeight * lines.length;
 
-      lines.height = height
+      lines.height = height;
       lines.maximumVerticalZoom = containerHeight / Math.ceil(height);
-      lines.maximumHorizontalZoom = Math.min(...(lines.map(x => x.maximumHorizontalZoom)));
-      lines.maximumZoom = Math.min(lines.maximumVerticalZoom, lines.maximumHorizontalZoom);
+      lines.maximumHorizontalZoom = Math.min(
+        ...lines.map(x => x.maximumHorizontalZoom)
+      );
+      lines.maximumZoom = Math.min(
+        lines.maximumVerticalZoom,
+        lines.maximumHorizontalZoom
+      );
     });
 
     compositions.sort((a, b) => b.maximumZoom - a.maximumZoom);
@@ -75,8 +80,8 @@ export default class FitSVGText extends React.Component {
         const endOfLastWord = words[words.length - 1][1];
 
         return this.props.children.substring(startOfFirstWord, endOfLastWord);
-      })
-    })
+      }),
+    });
 
     // [[[[[0, 1]], [[3, 5]]], [[0, 1], [3, 5]]]
 
@@ -95,8 +100,16 @@ export default class FitSVGText extends React.Component {
     const { width, height, children, ...restProps } = this.props;
 
     return (
-      <text {...restProps} ref={c => (this.textElement = c)}>
-        {this.state.text.map((line, i) => <tspan key={i}>{line}</tspan>)}
+      <text
+        {...restProps}
+        ref={c => (this.textElement = c)}
+        transform={`scale(${this.state.zoom}, ${this.state.zoom})`}
+      >
+        {this.state.text.map((line, i) =>
+          <tspan key={i} x={0} dy="1em">
+            {line}
+          </tspan>
+        )}
       </text>
     );
   }
