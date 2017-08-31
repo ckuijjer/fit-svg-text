@@ -83,16 +83,6 @@ export default class FitSVGText extends React.Component {
       }),
     });
 
-    // [[[[[0, 1]], [[3, 5]]], [[0, 1], [3, 5]]]
-
-    // get the length for each of the words
-
-    // get the lineheight
-
-    // get all possible compositions of words
-
-    // get the maximum zoom in the vertical direction
-
     console.log(this.textElement.getComputedTextLength());
   }
 
