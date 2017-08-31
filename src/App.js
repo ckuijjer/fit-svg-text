@@ -13,6 +13,7 @@ class App extends Component {
         <FitSVGTextRect width="20" height="10" text="Some text here" />                
         <FitSVGTextRect width="100" height="100" text="It starts failing if you put a lot of text though" />                
         <FitSVGTextRect width="150" height="100" text="It starts failing if you put a lot of text though" />                
+        <FitSVGTextRect width="150" height="100" text="Single" />                
       </div>
     )
     return ;    
