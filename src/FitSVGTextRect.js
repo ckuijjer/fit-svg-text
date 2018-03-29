@@ -1,21 +1,27 @@
-import React from 'react';
-import FitSVGText from './FitSVGText';
+import React from 'react'
+import FitSVGTextMeasure from './FitSVGTextMeasure'
 
-const FitSVGTextRect = ({ width, height, text }) =>
+const FitSVGTextRect = ({
+  width,
+  height,
+  text,
+  backgroundColor = '#fff',
+  color = '#000',
+}) => (
   <svg width={width} height={height}>
     <g>
-      <rect x="0" y="0" width={width} height={height} fill="#f99" />
-      <FitSVGText
+      <rect x="0" y="0" width={width} height={height} fill={backgroundColor} />
+      <FitSVGTextMeasure
         x="0"
         y="0"
-        stroke="#000"
+        stroke={color}
         dy="1em"
         width={width}
         height={height}
-      >
-        {text}
-      </FitSVGText>
+        text={text}
+      />
     </g>
-  </svg>;
+  </svg>
+)
 
-export default FitSVGTextRect;
+export default FitSVGTextRect
