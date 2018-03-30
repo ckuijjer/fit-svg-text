@@ -1,8 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React, {Component} from 'react'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+export default class extends Component {
+  render() {
+    return <div>
+      <h2>Welcome to React components</h2>
+    </div>
+  }
+}
