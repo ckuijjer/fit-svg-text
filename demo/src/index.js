@@ -9,8 +9,17 @@ import FitSVGText from '../../src'
 const Page = styled('div')({
   backgroundColor: '#fbfbfb',
   minHeight: '100vh',
+  fontFamily: 'Helvetica, Arial, sans-serif',
+})
+
+const Row = styled('div')({
+  marginTop: 24,
   display: 'flex',
   justifyContent: 'center',
+})
+
+const DocumentationContainer = styled('div')({
+  maxWidth: 960,
 })
 
 const ResizableHandle = styled('div')({
@@ -30,39 +39,57 @@ const StyledResizable = styled(Resizable)({
   justifyContent: 'center',
   border: `solid 1px #ccc`,
   background: '#f0f0f0',
-  marginTop: 40,
-  fontFamily: 'Helvetica',
 })
 
 class Demo extends Component {
   render() {
     return (
       <Page>
-        <StyledResizable
-          defaultSize={{
-            width: 300,
-            height: 200,
-          }}
-          handleComponent={{
-            topLeft: ResizableHandle,
-            topRight: ResizableHandle,
-            bottomRight: ResizableHandle,
-            bottomLeft: ResizableHandle,
-          }}
-        >
-          <ContainerDimensions>
-            {({ width, height }) => (
-              <FitSVGText
-                width={width - 2}
-                height={height - 2}
-                text="Fit SVG Text"
-              />
-            )}
-          </ContainerDimensions>
-        </StyledResizable>
+        <Row>
+          <StyledResizable
+            defaultSize={{
+              width: 300,
+              height: 200,
+            }}
+            handleComponent={{
+              topLeft: ResizableHandle,
+              topRight: ResizableHandle,
+              bottomRight: ResizableHandle,
+              bottomLeft: ResizableHandle,
+            }}
+          >
+            <ContainerDimensions>
+              {({ width, height }) => (
+                <FitSVGText
+                  width={width - 2}
+                  height={height - 2}
+                  text="Fit SVG Text"
+                />
+              )}
+            </ContainerDimensions>
+          </StyledResizable>
+        </Row>
+        <Row>
+          <DocumentationContainer>
+            The fit-svg-text react component renders, and potentially wraps,
+            text with the maximally possible font size for a container with
+            fixed dimensions.
+            <h2>Install</h2>
+            <code>npm install --save fit-svg-text</code>
+            <h2>Usage</h2>
+            <code>
+              <div dangerouslySetInnerHTML={createUsage()} />
+            </code>
+          </DocumentationContainer>
+        </Row>
       </Page>
     )
   }
 }
+
+const createUsage = () => ({
+  __html:
+    '&lt;FitSVGText width="300" height="200" text="Some example text" /&gt;',
+})
 
 render(<Demo />, document.querySelector('#demo'))
