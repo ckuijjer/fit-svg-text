@@ -114,7 +114,7 @@ export default class FitSVGTextMeasure extends React.Component {
           {text}
         </text>
         {linesOfText && (
-          <FitSVGText
+          <FitSVGTextInternal
             {...restProps}
             width={width}
             height={height}
