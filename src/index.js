@@ -1,7 +1,7 @@
 import React from 'react'
 import FitSVGTextMeasure from './FitSVGTextMeasure'
 
-const FitSVGTextRect = ({
+const FitSVGText = ({
   width,
   height,
   text,
@@ -24,4 +24,4 @@ const FitSVGTextRect = ({
   </svg>
 )
 
-export default FitSVGTextRect
+export default FitSVGText

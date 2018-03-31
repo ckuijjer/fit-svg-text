@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import getCompositions from './compositions'
 
-import FitSVGText from './FitSVGText'
+import FitSVGTextInternal from './FitSVGTextInternal'
 
 export default class FitSVGTextMeasure extends React.Component {
   textMeasurementElement = null
