@@ -1,7 +1,8 @@
 {
   "name": "fit-svg-text",
   "version": "0.1.0",
-  "description": "fit-svg-text React component",
+  "description":
+    "The fit-svg-text react component renders, and potentially wraps, text with the maximally possible font size for a container with fixed dimensions.",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": ["css", "es", "lib", "umd"],
