@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FitSVGText = ({
+const FitSVGTextInternal = ({
   width,
   height,
   zoom = 1,
@@ -16,4 +16,4 @@ const FitSVGText = ({
   </text>
 )
 
-export default FitSVGText
+export default FitSVGTextInternal
