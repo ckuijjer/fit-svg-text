@@ -4,6 +4,7 @@ import Resizable from 're-resizable'
 import ContainerDimensions from 'react-container-dimensions'
 import styled from 'react-emotion'
 
+import './index.css'
 import FitSVGText from '../../src'
 
 const Page = styled('div')({
@@ -13,7 +14,7 @@ const Page = styled('div')({
 })
 
 const Row = styled('div')({
-  marginTop: 24,
+  paddingTop: 24,
   display: 'flex',
   justifyContent: 'center',
 })
